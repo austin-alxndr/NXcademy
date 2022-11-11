@@ -1,0 +1,471 @@
+
+@import url('../css/fonts.css');
+
+html, body{
+    margin: 0%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+:root{
+
+    /*     theme font-family        */
+    --mont-bold:'mont', bold;
+
+    /*      Theme colors            */
+    --text-gray: #3f4954;
+    --text-light: #686666da;
+    --bg-color: #0f0f0f;
+    --white: #ffffff;
+    --midnight: #104f55;
+    --light-blue: #43b5f4;
+    --dark-blue: #2f3c83;
+    --purple: #9656f3;
+
+
+    /*      Gradient        */
+    --purple-gradient: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+    --sky: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+
+}
+
+/*---------------- Global Classes --------------*/
+
+a{
+    font-family: var(--mont-bold);
+    text-decoration: none;
+    color:var(--text-gray);
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.nav-items{
+    list-style-type: none;
+}
+
+h1{
+    font-family: var(--mont-bold);
+    font-size: 4rem;
+}
+
+h2{
+    font-family: var(--mont-bold);
+}
+
+h3{
+    font-family: var(--mont-bold);
+    font-size: 1.0rem;
+}
+
+button.btn{
+    border: none;
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+    font-size: 1rem;
+    font-family: var(--mont-bold);
+    cursor: pointer;
+}
+
+span{
+    font-family: var(--mont-bold);
+}
+
+.container{
+    margin: 0 5vw;
+}
+
+.text-gray{
+    color: var(--text-gray);
+}
+
+p{
+    font-family: var(--mont-bold);
+    color: var(--text-light);
+}
+
+img{
+    width:100%;
+}
+
+
+/*-------x--------- Global Classes --------x------*/
+
+/*---------------------- navbar ---------------*/
+
+header{
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 200;
+}
+
+.nav{
+    background: white;
+    padding: 0 2rem;
+    height: 0rem;
+    min-height: 7vh;
+    overflow: hidden;
+    transition: height 1s ease-in-out;
+    box-shadow: 0 4px 14px hsl(355deg 25% 15% / 10%);
+}
+
+.nav .nav-menu{
+    justify-content: space-between;
+}
+
+.nav .toggle-collapse{
+    position:absolute;
+    top: 1.4rem;
+    width: 90%;
+    cursor: pointer;
+    display: none;
+}
+
+.nav .toggle-collapse .toggle-icons{
+    display:flex;
+    justify-content: flex-end;
+    padding: 1.7rm 0rm;
+}
+
+.collapse{
+    height: 17rem;
+}
+
+.nav .toggle-collapse .toggle-icons i{
+    font-size: 1.4rem;
+    color: var(--text-gray);
+}
+
+.nav .nav-items{
+    display:flex;
+    margin: 0;
+}
+
+.nav .nav-items .nav-link{
+    padding: 1.6rem 1rem;
+    font-size: 1.1rem;
+    position: relative;
+    font-family: mont;
+    font-weight: 600;
+}
+
+.nav .nav-items .nav-link:hover{
+    background-color:var(--dark-blue);
+    background
+}
+
+.nav .nav-items .nav-link:hover a{ 
+    color: var(--white);
+}
+
+.nav .nav-items .nav-link:click a{ 
+    scroll-behavior: smooth;
+}
+
+.nav .nav-brand a{
+    font-size: 1.8rem;
+    padding: 1rem 0;
+    display: block;
+    font-family: mont;
+    font-weight: 780;
+}
+
+.nav .social{
+    padding: 1.4rem 0;
+}
+
+.nav .social i{
+    padding: 0.2rem;
+    font-size: 1.4rem;
+}
+
+.nav .social i:hover{
+    color: var(--dark-blue);
+}
+
+/*------------x--------- navbar ----------x-----*/
+
+
+/*---------------------- Main Content ------------------ */
+
+/** ------------ Site Title ------------ **/
+
+main .site-title{
+    background: url('../assets/Background-image-3.png');
+    background-size: 100% 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+}
+
+main .site-title .site-background{
+    padding-top: 10rem;
+    text-align: center;
+    color: var(--white);
+}
+
+main .site-title h1, h3{
+    margin: .3rem;
+}
+
+main .site-title .btn{
+    margin: 1.8rem;
+    background: var(--purple-gradient);
+}
+
+main .site-title .btn:hover{
+    background: transparent;
+    border: 1px solid var(--white);
+    color: var(--white);
+}
+
+.logo-title{
+    margin: auto;
+    margin-top: -40px;
+    width: 40%;
+    height: 40%;
+}
+/** --------x---- Site Title -----x------- **/
+
+/*---------------- Site Content -----------------*/
+/*----- Post Filter -----*/
+main .post-filter {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1.5rem;
+    margin-top: 2rem !important;
+    margin-bottom: 2rem !important; 
+
+}
+
+main .filter-item {
+    font-family: var(--mont-bold);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+main .active-filter {
+    background: var(--dark-blue);
+    color: var(--white);
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+/*--x--- Post Filter ---x--*/
+
+/*---- Posts -----*/
+.post{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, auto));
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.post-box{
+    background: var(--white);
+    box-shadow: 0 4px 14px hsl(355deg 25% 15% / 10%);
+    padding: 15px;
+    border-radius: 0.5rem;
+}
+
+.post-box:hover{
+    cursor:pointer;
+}
+
+.post-img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.5rem;
+}
+
+.category{
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--light-blue);
+}
+
+.post-title{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-gray);
+    /* To keep title in 2 lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post-date{
+    display:flex;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-top:4px;
+}
+
+.post-description{
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+    margin: 5px 0 10px;
+    /* To keep title in 3 lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.profile{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-img{
+    width:35px;
+    height:35px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 2px solid var(--light-blue);
+}
+
+.profile-name{
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/*--x-- Posts --x--*/
+
+/*-----------x---------- Main Content ----------x-------- */
+
+/*---------------------- Footer --------------------------*/
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0; 
+}
+
+.footer p{
+    font-size: 1rem;
+}
+
+.footer .social i{
+    padding: 0.2rem;
+    font-size: 1.4rem;
+}
+
+.footer .social i:hover{
+    color: var(--dark-blue);
+}
+
+/*---------x------------ Footer --------------x-----------*/
+
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------*/
+
+/*---------------- Post-page Content --------------------------*/
+
+nav .nav .nav-post-page .collapse{
+    height: 17rem !important;
+}
+
+.post-header{
+    width: 100%;
+    height: auto;
+    background: var(--white);
+}
+
+.post-container{
+    max-width: 800px;
+    margin: auto;
+    width:100%;
+}
+
+.header-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem !important;
+}
+
+.back-home{
+    color: var(--dark-blue);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.header-title{
+    width: 90%;
+    font-size: 2.6rem;
+    color: var(--text-gray);
+    text-align: center;
+    margin-bottom: 0.5rem;
+    margin-top: 0.6rem;
+}
+
+.header-img{
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.post-content{
+    margin-top: auto;
+}
+
+.sub-heading{
+    font-size: 1.2rem;
+}
+
+.post-text{
+    font-size: 1rem;
+    line-height: 1.7rem;
+    margin: 1rem 0;
+    text-align: justify;
+}
+
+/* Share */
+.share{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.8rem;
+    margin-top: 2rem;
+}
+
+.share-title{
+    font-size: 1.1rem;
+
+}
+
+/*          Viewport less than or equal to 750px            */
+
+@media only screen and (max-width: 750px){
+    .nav .nav-menu, .nav .nav-items{
+        flex-direction: column;
+    }
+
+    .nav .toggle-collapse{
+        display: initial;
+    }
+}
+
+@media only screen and (max-width: 640px){
+    .post-container{
+        max-width: 93%;
+    }
+}
